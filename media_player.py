@@ -206,6 +206,8 @@ class SamsungTVDevice(MediaPlayerDevice):
                     # BrokenPipe can occur when the commands is sent to fast
                     # WebSocketException can occur when timed out
                     self._remote = None
+                    self._state = STATE_OFF
+                    return
             self._state = STATE_ON
         except:
             # We got a response so it's on.
